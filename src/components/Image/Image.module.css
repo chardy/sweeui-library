@@ -1,0 +1,50 @@
+.Image {
+  margin: 0px 0px 30px 0px;
+}
+
+.Image h2 {
+  color: var(--title);
+  font-size: 26px;
+  font-weight: 600;
+  margin: 0px 0px 5px;
+  line-height: 34px;
+}
+
+.Image :global p.description {
+  color: var(--base);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.Image :global .image-container img {
+  position: absolute;
+  border-radius: 5px;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  opacity: 1;
+  object-fit: cover;
+  text-align: center;
+  transition: opacity 1.5s;
+}
+
+.Image :global .image-container img.pointer {
+  cursor: pointer;
+}
+
+.Image :global .image-container img.image-hidden {
+  opacity: 0;
+}
+
+.Image :global .photo-caption {
+  color: var(--base);
+  margin: 5px;
+}
+
+@media (max-width: 568px) {
+  .Image {
+    margin: 0px 0px 20px 0px;
+  }
+}

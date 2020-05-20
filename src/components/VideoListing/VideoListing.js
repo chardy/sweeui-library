@@ -1,7 +1,7 @@
 import React from 'react'
+import { Flex } from 'sweeui'
 import ModuleCSS from './VideoListing.module.css'
 import PropTypes from 'prop-types'
-import { Flex } from 'sweeui'
 
 function VideoListing({ title, description, height, width, items, limit, coverflow, handleClick }) {
   if (!items || items && items.length <= 0) return null

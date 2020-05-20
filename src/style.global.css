@@ -33,6 +33,11 @@ html {
 
   /* color theme */
   --primary: #275efe;
+  --primary2: #6189ff;
+  --primary3: #000b54;
+  --bg2: #eaf0ff;
+  --link: #167efb;
+  --linkHover: #00adef;
   --title: #031aba;
   --primary-color: #275efe;
   --input-border-color: #BBC1E1;

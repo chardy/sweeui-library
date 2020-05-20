@@ -1,0 +1,75 @@
+.SplashImage {
+  margin: 0px 0px 30px 0px;
+}
+
+.SplashImage :global .splash-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.SplashImage :global .splash-container > div {
+  position: absolute;
+  padding: 15px 24px;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  text-align: center;
+  transition: opacity 1.5s;
+}
+
+.SplashImage :global .splash-container > div.pointer {
+  cursor: pointer;
+}
+
+.SplashImage :global .splash-container > div.image-hidden {
+  opacity: 0;
+}
+
+.SplashImage > div h1,
+.SplashImage > div h2 {
+  color: #FFFFFF;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2em;
+  margin: 0px 0px 5px;
+  text-shadow: 2px 2px 4px var(--shadow);
+}
+
+.SplashImage :global .splash-container > div p {
+  color: #FFFFFF;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 500;
+  margin-bottom: 0px;
+  text-shadow: 2px 2px 4px var(--shadow);
+}
+
+.SplashImage :global .photo-caption {
+  color: var(--base);
+  margin: 5px;
+}
+
+@media (max-width: 568px) {
+  .SplashImage {
+    margin: 0px 0px 20px 0px;
+  }
+
+  .SplashImage :global .splash-container > div {
+    max-height: 25vh !important;
+    min-height: auto !important;
+    padding: 12px 15px;
+  }
+
+  .SplashImage :global .splash-container > div h1,
+  .SplashImage :global .splash-container > div h2 {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .SplashImage :global .splash-container > div p {
+    font-size: 11px;
+    line-height: 14px;
+  }
+}

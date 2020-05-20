@@ -1,0 +1,126 @@
+.Text :global h2.text-title {
+  color: var(--title);
+  font-size: 26px;
+  font-weight: 600;
+  margin: 0px 0px 5px;
+  padding-right: 20px;
+  position: relative;
+}
+
+.Text:global.collapsible h2.text-title {
+  position: relative;
+  cursor: pointer;
+}
+
+.Text:global.collapsible.expanded h2.text-title:after {
+  content: '\2227';
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.Text:global.collapsible.collapsed h2.text-title:after {
+  content: '\2228';
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.Text:global.collapsible.collapsed {
+  border-bottom: 1px solid #DADADA;
+  padding-bottom: 6px;
+  margin-bottom: 0px;
+}
+
+.Text:global.collapsible.collapsed h2.text-title + .text-content {
+  display: none;
+}
+
+.Text :global .text-content {
+  color: var(--base);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.Text :global .text-content h3 {
+  font-size: 22px;
+  line-height: 28px;
+  margin: 0px 0px 3px;
+  color: var(--primary3);
+}
+
+.Text :global .text-content p {
+  margin: 0px;
+}
+
+.Text :global .text-content p > br {
+  display: none;
+}
+
+.Text :global .text-content p + p {
+  margin-top: 6px;
+}
+
+.Text :global .text-content p + h3,
+.Text :global .text-content p + blockquote {
+  margin-top: 12px;
+}
+
+.Text :global .text-content p + ul {
+  margin-top: 6px;
+}
+
+.Text :global .text-content a {
+  color: var(--link);
+  text-decoration: underline;
+}
+
+.Text :global .text-content a:hover {
+  color: var(--linkHover);
+}
+
+.Text :global .text-content > .ql-indent-1 { padding-left: 25px; }
+.Text :global .text-content > .ql-indent-2 { padding-left: 50px; }
+.Text :global .text-content > .ql-indent-3 { padding-left: 75px; }
+
+.Text :global .text-content > ol,
+.Text :global .text-content > ul {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.Text :global .text-content > ol > li,
+.Text :global .text-content > ul > li {
+  margin-bottom: 3px;
+}
+
+.Text :global .text-content li > a {
+  text-decoration: none;
+}
+
+.Text :global .text-content li > a:hover {
+  text-decoration: underline;
+}
+
+.Text :global .text-content > p:last-child {
+  margin-bottom: 0px;
+}
+
+.Text :global .text-content > blockquote {
+  font-size: 0.9em;
+  padding: 2px 0px 8px 15px;
+  border-left: 3px solid var(--primary2);
+  background-color: var(--bg2);
+  margin-left: 0px;
+  margin-bottom: 0px;
+  margin-top: -8px;
+}
+
+.Text :global .text-content > :not(blockquote) + blockquote {
+  padding-top: 8px;
+}
+
+.Text :global .text-content > blockquote + :not(blockquote) {
+  margin-top: 12px;
+}

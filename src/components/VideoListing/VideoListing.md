@@ -1,5 +1,3 @@
-Video Listing
-
 ```jsx
 <VideoListing
   title={"Video Listing"}

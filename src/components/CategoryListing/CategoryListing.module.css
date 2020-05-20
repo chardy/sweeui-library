@@ -1,0 +1,101 @@
+.CategoryListing h2 {
+  color: var(--title);
+  font-size: 26px;
+  font-weight: 600;
+  margin: 0px 0px 5px;
+  line-height: 34px;
+}
+
+.CategoryListing :global .description p {
+  color: var(--base);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.CategoryListing :global .card-item {
+  position: relative;
+  cursor: pointer;
+  filter: saturate(0.8);
+  border-radius: 5px;
+  -webkit-box-shadow: 0 4px 6px 0 rgba(14, 14, 14, 0.1);
+  box-shadow: 0 4px 6px 0 rgba(14, 14, 14, 0.1);
+}
+
+.CategoryListing :global .card-item .card-box {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 8px 16px;
+  border-radius: 5px;
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.8) 0, transparent 50%);
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.8), transparent 50%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0, transparent 50%);
+}
+
+.CategoryListing :global .card-item:hover {
+  -webkit-box-shadow: 0 4px 12px 0 rgba(14, 14, 14, 0.5);
+  box-shadow: 0 4px 12px 0 rgba(14, 14, 14, 0.5);
+  filter: saturate(1.1);
+}
+
+.CategoryListing :global .card-item h3 {
+  color: #FFFFFF;
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.53);
+}
+
+.CategoryListing :global .more {
+  margin-top: 16px;
+}
+
+@media (max-width: 568px) {
+  .CategoryListing {
+    margin-bottom: 20px;
+  }
+
+  .CategoryListing .Wrapper:global.coverflow {
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+  }
+
+  .CategoryListing :global .coverflow .card-wrapper {
+    width: 80% !important;
+    min-width: 80% !important;
+    max-width: 80% !important;
+  }
+
+  .CategoryListing .Wrapper:global.normal {
+    flex-wrap: wrap !important;
+  }
+
+  .CategoryListing :global .normal .card-wrapper {
+    width: 50% !important;
+    min-width: 50% !important;
+    max-width: 50% !important;
+  }
+
+  .CategoryListing :global .normal .card-wrapper .card-item {
+    height: 120px !important;
+    min-height: 120px !important;
+    max-height: 120px !important;
+  }
+
+  .CategoryListing h2 {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .CategoryListing :global .card-item .card-box {
+    padding: 8px 12px;
+  }
+
+  .CategoryListing :global .card-item h3 {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
