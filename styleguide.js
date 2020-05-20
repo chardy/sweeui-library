@@ -1,7 +1,6 @@
 // styleguide/setup.js
 import "./src/style.global.css";
 
-import Button from "./src/components/Button/Button";
+import VideoListing from "./src/components/VideoListing/VideoListing";
 
-global.Button = Button;
-
+global.VideoListing = VideoListing;

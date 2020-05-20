@@ -1,4 +1,4 @@
 import "./style.global.css";
-import Button from "./components/Button/Button";
+import VideoListing from "./components/VideoListing/VideoListing";
 
-export { Button };
+export { VideoListing };

@@ -32,6 +32,8 @@ html {
   /*  font-size: 62.5%;*/
 
   /* color theme */
+  --primary: #275efe;
+  --title: #031aba;
   --primary-color: #275efe;
   --input-border-color: #BBC1E1;
   --placeholder-color: #AAAAAA;
