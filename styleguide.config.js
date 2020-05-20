@@ -4,6 +4,7 @@ const webpackConfig = require("./config/webpack.js");
 
 module.exports = {
   title: `${pkg.name} v${pkg.version}`,
+  serverPort: 6061,
   require: [path.resolve(__dirname, "styleguide.js")],
   components: "src/components/**/[A-Z]*.js",
   ribbon: {
