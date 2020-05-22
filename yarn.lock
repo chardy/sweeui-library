@@ -9729,8 +9729,8 @@ svgo@^1.0.0, svgo@^1.2.2:
     util.promisify "~1.0.0"
 
 sweeui@^1.0.8:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/sweeui/-/sweeui-1.0.8.tgz#2d7596af6c5341103e809978cd65c661175ed58c"
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/sweeui/-/sweeui-1.0.9.tgz#eb8121e143ae9fb0003ebabf2898b707da39f3a7"
 
 symbol-tree@^3.2.2:
   version "3.2.4"
