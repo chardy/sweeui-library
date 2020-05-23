@@ -23,7 +23,7 @@ function groupItems({ width, items, n, limit }) {
   }
 }
 
-function FlexGallery({ className, children, width, gutter, focus, limit, rounded }) {
+function FlexGallery({ className, children, width, gutter, focus, limit, rounded, more }) {
   const [containerWidth, setContainerWidth] = useState(width)
 
   useEffect(() => {
@@ -32,7 +32,8 @@ function FlexGallery({ className, children, width, gutter, focus, limit, rounded
 
   if (!children) return null
 
-  let columns = []
+  let columns = [], display = limit
+  const total = children.length
   const items = children.slice(0, limit || children.length)
   const length = items.length
 
@@ -44,8 +45,9 @@ function FlexGallery({ className, children, width, gutter, focus, limit, rounded
       columns = [
         { width: '50%', height: height, childHeight: height, nodes: [items[0]] },
         { width: '25%', height: height, childHeight: height / 2, nodes: [items[1], items[3]] },
-        { width: '25%', height: height, childHeight: height / 2, nodes: [items[2], items[4]] }
+        { width: '25%', height: height, childHeight: height / 2, nodes: [items[2], items[4]], last: true }
       ]
+      display = 5
 
       if (focus === "center") {
         columns = [columns[1], columns[0], columns[2]]
@@ -56,8 +58,9 @@ function FlexGallery({ className, children, width, gutter, focus, limit, rounded
       const height = (2 * containerWidth / 3) / 1.6
       columns = [
         { width: '66.67%', height: height, childHeight: height, nodes: [items[0]] },
-        { width: '33.33%', height: height, childHeight: height / 2, nodes: [items[1], items[2]] }
+        { width: '33.33%', height: height, childHeight: height / 2, nodes: [items[1], items[2]], last: true }
       ]
+      display = 3
 
       if (focus === "right") {
         columns = [columns[1], columns[0]]
@@ -67,14 +70,18 @@ function FlexGallery({ className, children, width, gutter, focus, limit, rounded
       columns = [
         { width: '100%', height: height, childHeight: height, nodes: [items[0]] }
       ]
+      display = 1
     }
   }
+
+  const moreOf = total - display + 1
 
   return (
     <div className={classNames({
       ...classNameObject(className),
       [ModuleCSS["FlexGallery"]]: true,
-      "rounded": rounded
+      "rounded": rounded,
+      "more": more && display > 1 && (total - display) > 0,
     })}>
       <Flex width={`${containerWidth + gutter}px`} gutter={[gutter,0]}>
         {
@@ -82,9 +89,25 @@ function FlexGallery({ className, children, width, gutter, focus, limit, rounded
             <Flex key={index} wrap={1} width={column.width} height={column.height} gutter={[0,gutter]}>
               {
                 !!column.nodes && column.nodes.map((node, nodeIndex) => (
-                  <Flex key={`${index}.${nodeIndex}`} className="node-container" direction="vertical" width={'100%'} height={column.childHeight}>
-                    {node}
-                  </Flex>
+                  <React.Fragment key={`${index}.${nodeIndex}`}>
+                    <Flex
+                      className={classNames({
+                        "node-container": true,
+                        "last-node": column.last && nodeIndex == column.nodes.length - 1
+                      })}
+                      direction="vertical"
+                      width={'100%'}
+                      height={column.childHeight}
+                    >
+                      {node}
+                      {
+                        more && moreOf > 1 && column.last && nodeIndex == column.nodes.length - 1 &&
+                        <Flex className="show-more" align="middle" justify="center">
+                          +{moreOf}
+                        </Flex>
+                      }
+                    </Flex>
+                  </React.Fragment>
                 ))
               }
             </Flex>
@@ -105,6 +128,7 @@ FlexGallery.propTypes = {
   gutter: PropTypes.number,
   limit: PropTypes.number,
   rounded: PropTypes.bool,
+  more: PropTypes.bool,
   focus: PropTypes.oneOf(["left", "center", "right", "none"])
 };
 
@@ -116,5 +140,6 @@ FlexGallery.defaultProps = {
   gutter: 0,
   limit: null,
   rounded: false,
+  more: false,
   focus: "none"
 };

@@ -11,3 +11,21 @@
 .FlexGallery:global.rounded .node-container > * {
   border-radius: 5px;
 }
+
+.FlexGallery:global.more .last-node {
+  position: relative;
+}
+
+.FlexGallery:global.more .last-node .show-more {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #000000AA;
+  z-index: 1;
+  color: #FFF;
+  font-size: 26px;
+  font-weight: 500;
+  pointer-events: none;
+}
