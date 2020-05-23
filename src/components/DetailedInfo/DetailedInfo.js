@@ -4,7 +4,7 @@ import { Flex } from 'sweeui'
 import ModuleCSS from './DetailedInfo.module.css'
 import PropTypes from 'prop-types'
 
-function DetailedInfoItem({ width, icon, label, value, divider }) {
+function DetailedInfoItem({ width, icon, label, value, divider, iconWidth }) {
   if (divider) {
     return (
       <Flex className="info-divider" />
@@ -14,14 +14,14 @@ function DetailedInfoItem({ width, icon, label, value, divider }) {
   return (
     !!value &&
     <Flex className="info-item" width={width || '100%'} gutter={[8,0]} align="middle">
-      <div className="info-icon">{icon}</div>
+      <Flex className="info-icon" width={iconWidth} justify="center">{icon}</Flex>
       {!!label && <div className="info-label">{label}</div>}
       {!!value && <div className="info-value">{value}</div>}
     </Flex>
   )
 }
 
-export default function DetailedInfo({ className, items, transform }) {
+export default function DetailedInfo({ className, items, transform, iconWidth }) {
   return (
     <div className={classNames({
       ...classNameObject(className),
@@ -38,6 +38,7 @@ export default function DetailedInfo({ className, items, transform }) {
                 key={index}
                 width={item.width}
                 icon={item.icon}
+                iconWidth={iconWidth}
                 label={item.label}
                 value={item.value}
                 divider={item.divider}
@@ -52,6 +53,7 @@ export default function DetailedInfo({ className, items, transform }) {
 
 DetailedInfo.propTypes = {
   className: PropTypes.string,
+  iconWidth: PropTypes.string,
   items: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string,
     width: PropTypes.string,
@@ -68,6 +70,7 @@ DetailedInfo.propTypes = {
 
 DetailedInfo.defaultProps = {
   className: "",
+  iconWidth: '30px',
   items: null,
   transform: 'none'
 };
