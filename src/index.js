@@ -8,5 +8,6 @@ import ProductListing from "./components/ProductListing/ProductListing";
 import ArticleListing from "./components/ArticleListing/ArticleListing";
 import VideoListing from "./components/VideoListing/VideoListing";
 import ReviewListing from "./components/ReviewListing/ReviewListing";
+import DetailedInfo from "./components/DetailedInfo/DetailedInfo";
 
-export { Text, Image, SplashImage, CategoryListing, ProductListing, ArticleListing, VideoListing, ReviewListing };
+export { Text, Image, SplashImage, CategoryListing, ProductListing, ArticleListing, VideoListing, ReviewListing, DetailedInfo };

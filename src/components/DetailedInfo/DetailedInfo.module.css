@@ -1,0 +1,36 @@
+.DetailedInfo:global.smaller {
+  zoom: 90%;
+}
+
+.DetailedInfo :global .info-item {
+  font-size: 15px;
+}
+
+.DetailedInfo :global .info-label {
+  color: var(--title2);
+  width: 120px;
+  min-width: 120px;
+  max-width: 120px;
+}
+
+.DetailedInfo :global .info-value {
+  flex-grow: 1;
+}
+
+.DetailedInfo:global.capitalize .info-value {
+  text-transform: capitalize;
+}
+
+.DetailedInfo :global .info-divider {
+  width: 100%;
+  border-bottom: 1px solid #E8E8E8;
+  margin: 0px 16px 5px;
+}
+
+@media (max-width: 568px) {
+  .DetailedInfo :global .info-item {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+  } 
+}
