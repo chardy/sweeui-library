@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Section } from 'sweeui'
 import { classNames, classNameObject } from "../../utils/format"
 import ModuleCSS from './Text.module.css'
 import PropTypes from 'prop-types'
@@ -14,7 +13,7 @@ function Text({ className, title, content, collapsible }) {
   }
 
   return (
-    <Section className={classNames({
+    <div className={classNames({
       ...classNameObject(className),
       [ModuleCSS["Text"]]: true,
       "collapsible": collapsible,
@@ -29,7 +28,7 @@ function Text({ className, title, content, collapsible }) {
         </h2>
       }
       {!!content && <div className="text-content" dangerouslySetInnerHTML={{ __html: content }} />}
-    </Section>
+    </div>
   )
 }
 

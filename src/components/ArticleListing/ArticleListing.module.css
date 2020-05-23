@@ -1,3 +1,7 @@
+.ArticleListing {
+  margin: 0px 0px 30px;
+}
+
 .ArticleListing h2 {
   color: var(--title);
   font-size: 26px;

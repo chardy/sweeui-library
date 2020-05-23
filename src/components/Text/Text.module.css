@@ -1,3 +1,7 @@
+.Text {
+  margin: 0px 0px 30px;
+}
+
 .Text :global h2.text-title {
   color: var(--title);
   font-size: 26px;

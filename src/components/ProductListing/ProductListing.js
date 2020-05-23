@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { classNames, classNameObject } from '../../utils/format'
-import { Section, Flex, Button } from 'sweeui'
+import { Flex, Button } from 'sweeui'
 import ModuleCSS from './ProductListing.module.css'
 import PropTypes from 'prop-types'
 import LinkItem from '../LinkItem/LinkItem'
@@ -25,7 +25,7 @@ export default function ProductListing({
   }
 
   return (
-    <Section className={classNames({
+    <div className={classNames({
       ...classNameObject(className),
       [ModuleCSS["ProductListing"]]: true,
       "collapsible": collapsible,
@@ -93,7 +93,7 @@ export default function ProductListing({
         items.length > current &&
         <Button className="more" type="link" onClick={handleFetchMore}>{more} &or;</Button>
       }
-    </Section>
+    </div>
   )
 }
 

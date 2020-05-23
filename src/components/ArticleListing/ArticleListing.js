@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Button, Section } from 'sweeui'
+import { Flex, Button } from 'sweeui'
 import ModuleCSS from './ArticleListing.module.css'
 import PropTypes from 'prop-types'
 import LinkItem from '../LinkItem/LinkItem'
@@ -12,7 +12,7 @@ export default function ArticleListing({ title, description, height, items, limi
   }
 
   return (
-    <Section className={ModuleCSS["ArticleListing"]}>
+    <div className={ModuleCSS["ArticleListing"]}>
       {!!title && <h2>{title}</h2>}
       {!!description && <p className="description">{description}</p>}
       {
@@ -46,7 +46,7 @@ export default function ArticleListing({ title, description, height, items, limi
         typeof handleMore === 'function' &&
         <Button className="more" type="link" onClick={handleShowAll}>{more} &rsaquo;</Button>
       }
-    </Section>
+    </div>
   )
 }
 

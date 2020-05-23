@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Section, Flex } from 'sweeui'
+import { Flex } from 'sweeui'
 import PropTypes from 'prop-types'
 import ModuleCSS from './SplashImage.module.css'
 
@@ -35,7 +35,7 @@ function SplashImage({ title, description, height, items, handleClick }) {
   }, 5000)
 
   return (
-    <Section className={ModuleCSS["SplashImage"]}>
+    <div className={ModuleCSS["SplashImage"]}>
       <Flex className="splash-container" direction="vertical" height={height}>
         {
           items.map((item, index) => (
@@ -58,7 +58,7 @@ function SplashImage({ title, description, height, items, handleClick }) {
         }
       </Flex>
       <Flex height={height} />
-    </Section>
+    </div>
   )
 }
 

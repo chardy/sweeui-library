@@ -13,7 +13,7 @@ function VideoListing({ title, description, height, width, items, limit, coverfl
   }
 
   return (
-    <section className={ModuleCSS["VideoListing"]}>
+    <div className={ModuleCSS["VideoListing"]}>
       <h2>{title}</h2>
       <p>{description}</p>
       <Flex className={`${ModuleCSS["Wrapper"]} ${coverflow? 'coverflow' : 'normal'}`} wrap={1} gutter={[16,0]}>
@@ -43,7 +43,7 @@ function VideoListing({ title, description, height, width, items, limit, coverfl
           );
         })}
       </Flex>
-    </section>
+    </div>
   )
 }
 

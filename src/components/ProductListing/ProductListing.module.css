@@ -1,3 +1,7 @@
+.ProductListing {
+  margin: 0px 0px 30px;
+}
+
 .ProductListing h2 {
   color: var(--title);
   font-size: 26px;

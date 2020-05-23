@@ -1,3 +1,7 @@
+.CategoryListing {
+  margin: 0px 0px 30px;
+}
+
 .CategoryListing h2 {
   color: var(--title);
   font-size: 26px;

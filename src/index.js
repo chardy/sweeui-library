@@ -7,5 +7,6 @@ import CategoryListing from "./components/CategoryListing/CategoryListing";
 import ProductListing from "./components/ProductListing/ProductListing";
 import ArticleListing from "./components/ArticleListing/ArticleListing";
 import VideoListing from "./components/VideoListing/VideoListing";
+import ReviewListing from "./components/ReviewListing/ReviewListing";
 
-export { Text, Image, SplashImage, CategoryListing, ProductListing, ArticleListing, VideoListing };
+export { Text, Image, SplashImage, CategoryListing, ProductListing, ArticleListing, VideoListing, ReviewListing };

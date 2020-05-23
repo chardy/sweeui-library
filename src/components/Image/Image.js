@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import ModuleCSS from './Image.module.css'
 import PropTypes from 'prop-types'
 import { classNames } from '../../utils/format'
-import { Section, Flex } from 'sweeui'
+import { Flex } from 'sweeui'
 
 function useInterval(callback, delay) {
   const savedCallback = useRef()
@@ -47,7 +47,7 @@ function Image({ title, description, height, items, collapsible, handleClick, La
   }, 5000)
 
   return (
-    <Section className={classNames({
+    <div className={classNames({
       [ModuleCSS["Image"]]: true,
       "collapsible": collapsible
     })}>
@@ -72,7 +72,7 @@ function Image({ title, description, height, items, collapsible, handleClick, La
         }
       </Flex>
       {!!caption && <p className="photo-caption">&#9650; {caption}</p>}
-    </Section>
+    </div>
   )
 }
 
