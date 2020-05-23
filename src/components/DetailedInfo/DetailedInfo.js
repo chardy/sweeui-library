@@ -32,10 +32,10 @@ export default function DetailedInfo({ className, items, transform }) {
         !!items && items.length > 0 &&
         <Flex className="info-list" wrap={1} gutter={[32,4]}>
           {
-            items.map(item => (
+            items.map((item, index) => (
               item &&
               <DetailedInfoItem
-                key={item.id}
+                key={index}
                 width={item.width}
                 icon={item.icon}
                 label={item.label}

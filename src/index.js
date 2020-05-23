@@ -10,4 +10,6 @@ import VideoListing from "./components/VideoListing/VideoListing";
 import ReviewListing from "./components/ReviewListing/ReviewListing";
 import DetailedInfo from "./components/DetailedInfo/DetailedInfo";
 
-export { Text, Image, SplashImage, CategoryListing, ProductListing, ArticleListing, VideoListing, ReviewListing, DetailedInfo };
+import FlexGallery from "./layouts/FlexGallery/FlexGallery";
+
+export { Text, Image, SplashImage, CategoryListing, ProductListing, ArticleListing, VideoListing, ReviewListing, DetailedInfo, FlexGallery };
