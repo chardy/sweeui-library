@@ -32,9 +32,16 @@
   z-index: 100;
 }
 
+.Modal:global.sui-modal-tall .sui-modal-container { max-height: 90vh; }
 .Modal:global.sui-modal-medium .sui-modal-container { width: 750px; max-height: 80vh; }
 .Modal:global.sui-modal-large .sui-modal-container { width: 900px; max-height: 90vh; }
 .Modal:global.sui-modal-full .sui-modal-container { width: 100vw; max-height: 100vh; }
+
+.Modal:global.sui-modal-transparent .sui-modal-container {
+  background: transparent;
+  box-shadow: none;
+  margin-top: -20px;
+}
 
 .Modal :global .sui-modal-header {
   padding: 5px 15px 0px;
@@ -55,6 +62,12 @@
 .Modal :global .sui-modal-header .sui-close > button {
   padding: 3px 8px;
   margin: 0;
+}
+
+.Modal:global.sui-modal-transparent .sui-modal-header .sui-close > button {
+  color: #FFFFFF;
+  margin-right: 5px;
+  margin-bottom: -5px;
 }
 
 .Modal :global .sui-modal-body {
@@ -89,5 +102,9 @@
 
   .Modal :global .sui-modal-header .sui-close > button {
     color: #FFFFFF;
+  }
+
+  .Modal:global.sui-modal-transparent .sui-modal-header {
+    background: transparent;
   }
 }

@@ -4,7 +4,7 @@ import ModuleCSS from './Modal.module.css'
 import PropTypes from 'prop-types'
 import { Flex, Button } from 'sweeui'
 
-export default function Modal({ children, className, visible, header, type, onClose }) {
+export default function Modal({ children, className, visible, header, type, containerType, onClose }) {
   const [outsideClick, setOutsideClick] = useState(false)
   const [insideClick, setInsideClick] = useState(false)
 
@@ -22,7 +22,8 @@ export default function Modal({ children, className, visible, header, type, onCl
   if (!visible) return false
 
   let classes = {}
-  if (["medium", "large", "full"].includes(type)) { classes[`sui-modal-${type}`] = true }
+  if (["medium", "large", "full", "tall"].includes(type)) { classes[`sui-modal-${type}`] = true }
+  if (["transparent"].includes(containerType)) { classes[`sui-modal-${containerType}`] = true }
 
   return (
     <>
@@ -63,7 +64,8 @@ Modal.propTypes = {
   onClose: PropTypes.func.isRequired,
   className: PropTypes.string,
   visible: PropTypes.bool,
-  type: PropTypes.oneOf(["default", "medium", "large", "full"]),
+  type: PropTypes.oneOf(["default", "medium", "large", "full", "tall"]),
+  containerType: PropTypes.oneOf(["default", "transparent"]),
   header: PropTypes.string,
 };
 
@@ -72,5 +74,6 @@ Modal.defaultProps = {
   className: "",
   visible: false,
   type: "default",
+  containerType: "default",
   header: null
 };
