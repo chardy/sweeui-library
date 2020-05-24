@@ -12,4 +12,6 @@ import DetailedInfo from "./components/DetailedInfo/DetailedInfo";
 
 import FlexGallery from "./layouts/FlexGallery/FlexGallery";
 
-export { Text, Image, SplashImage, CategoryListing, ProductListing, ArticleListing, VideoListing, ReviewListing, DetailedInfo, FlexGallery };
+import Modal from "./modules/Modal/Modal";
+
+export { Text, Image, SplashImage, CategoryListing, ProductListing, ArticleListing, VideoListing, ReviewListing, DetailedInfo, FlexGallery, Modal };

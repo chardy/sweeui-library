@@ -1,0 +1,82 @@
+.Modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Modal:before {
+  content: '';
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  cursor: pointer;
+  display: block;
+  z-index: 1;
+  background: #000000BB;
+}
+
+.Modal :global .modal-container {
+  background: #FFFFFF;
+  width: 500px;
+  height: 80vh;
+  border-radius: 5px;
+  box-shadow: rgba(67, 90, 111, 0.3) 0px 0px 1px, rgba(67, 90, 111, 0.47) 0px 16px 24px -8px;
+  z-index: 100;
+}
+
+.Modal :global .modal-header {
+  padding: 5px 15px 0px;
+}
+
+.Modal :global .modal-header .header h3 {
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.Modal :global .modal-header .close {
+  font-size: 36px;
+  line-height: 28px;
+  cursor: pointer;
+  margin-right: -8px;
+}
+
+.Modal :global .modal-header .close > button {
+  padding: 3px 8px;
+  margin: 0;
+}
+
+.Modal :global .modal-body {
+  padding: 5px 15px;
+  margin-bottom: 15px;
+  overflow-y: auto;
+}
+
+@media (max-width: 568px) {
+  .Modal :global .modal-container {
+    width: 100vw;
+    height: 100vh;
+    box-shadow: none;
+    border-radius: 0px;
+  }
+
+  .Modal :global .modal-header {
+    background: var(--primary);
+    padding-bottom: 5px;
+  }
+  
+  .Modal :global .modal-header .header h3 {
+    font-size: 1.2em;
+    color: #FFFFFF;
+  }
+
+  .Modal :global .modal-header .close > button {
+    color: #FFFFFF;
+  }
+}
