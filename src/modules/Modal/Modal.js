@@ -19,6 +19,14 @@ export default function Modal({ children, className, visible, header, type, cont
     }
   }, [outsideClick, insideClick])
 
+  useEffect(() => {
+    if (visible) {
+      document.body.classList.add('sui-modal-open')
+    } else {
+      document.body.classList.remove('sui-modal-open')
+    }
+  }, [visible])
+
   if (!visible) return false
 
   let classes = {}
@@ -38,7 +46,13 @@ export default function Modal({ children, className, visible, header, type, cont
         <Flex
           className="sui-modal-container"
           direction="vertical"
-          onClick={() => setInsideClick(true)}
+          onClick={() => {
+            if (containerType === "transparent") {
+              setOutsideClick(true)
+            } else {
+              setInsideClick(true)
+            }
+          }}
         >
           <Flex className="sui-modal-header" align="middle" gutter={[16,0]}>
             <Flex className="sui-header" grow={1}>
@@ -48,13 +62,24 @@ export default function Modal({ children, className, visible, header, type, cont
               <Button type="ghost" onClick={onClose}>&times;</Button>
             </Flex>
           </Flex>
-          <Flex className="sui-modal-body" grow={1}>
+          <Flex
+            className="sui-modal-body"
+            grow={1}
+            onClick={() => {
+              if (containerType === "transparent") {
+                setInsideClick(true)
+              }
+            }}
+          >
             <div>
               {children}
             </div>
           </Flex>
         </Flex>
       </div>
+      <style jsx global>{`
+        .sui-modal-open { overflow: hidden; }
+      `}</style>
     </>
   )
 }

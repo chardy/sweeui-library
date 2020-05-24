@@ -33,4 +33,8 @@
     min-width: 100% !important;
     max-width: 100% !important;
   } 
+
+  .DetailedInfo :global .info-value {
+    overflow-wrap: anywhere;
+  }
 }
