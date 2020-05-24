@@ -32,7 +32,7 @@
   z-index: 100;
 }
 
-.Modal:global.sui-modal-tall .sui-modal-container { max-height: 90vh; }
+.Modal:global.sui-modal-tall .sui-modal-container { max-height: 95vh; }
 .Modal:global.sui-modal-medium .sui-modal-container { width: 750px; max-height: 80vh; }
 .Modal:global.sui-modal-large .sui-modal-container { width: 900px; max-height: 90vh; }
 .Modal:global.sui-modal-full .sui-modal-container { width: 100vw; max-height: 100vh; }
