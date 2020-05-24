@@ -4,7 +4,7 @@ import ModuleCSS from './Modal.module.css'
 import PropTypes from 'prop-types'
 import { Flex, Button } from 'sweeui'
 
-export default function Modal({ children, className, visible, header, onClose }) {
+export default function Modal({ children, className, visible, header, type, onClose }) {
   const [outsideClick, setOutsideClick] = useState(false)
   const [insideClick, setInsideClick] = useState(false)
 
@@ -21,29 +21,33 @@ export default function Modal({ children, className, visible, header, onClose })
 
   if (!visible) return false
 
+  let classes = {}
+  if (["medium", "large", "full"].includes(type)) { classes[`sui-modal-${type}`] = true }
+
   return (
     <>
       <div
         className={classNames({
           ...classNameObject(className),
+          ...classes,
           [ModuleCSS["Modal"]]: true
         })}
         onClick={() => setOutsideClick(true)}
       >
         <Flex
-          className="modal-container"
+          className="sui-modal-container"
           direction="vertical"
           onClick={() => setInsideClick(true)}
         >
-          <Flex className="modal-header" align="middle" gutter={[16,0]}>
-            <Flex className="header" grow={1}>
+          <Flex className="sui-modal-header" align="middle" gutter={[16,0]}>
+            <Flex className="sui-header" grow={1}>
               <h3 className="line-clamp line-clamp-1">{header}</h3>
             </Flex>
-            <Flex className="close">
+            <Flex className="sui-close">
               <Button type="ghost" onClick={onClose}>&times;</Button>
             </Flex>
           </Flex>
-          <Flex className="modal-body" grow={1}>
+          <Flex className="sui-modal-body" grow={1}>
             <div>
               {children}
             </div>
@@ -59,6 +63,7 @@ Modal.propTypes = {
   onClose: PropTypes.func.isRequired,
   className: PropTypes.string,
   visible: PropTypes.bool,
+  type: PropTypes.oneOf(["default", "medium", "large", "full"]),
   header: PropTypes.string,
 };
 
@@ -66,5 +71,6 @@ Modal.defaultProps = {
   onClose: null,
   className: "",
   visible: false,
+  type: "default",
   header: null
 };

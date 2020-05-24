@@ -22,61 +22,72 @@
   background: #000000BB;
 }
 
-.Modal :global .modal-container {
+.Modal :global .sui-modal-container {
+  position: relative;
   background: #FFFFFF;
   width: 500px;
-  height: 80vh;
+  max-height: 80vh;
   border-radius: 5px;
   box-shadow: rgba(67, 90, 111, 0.3) 0px 0px 1px, rgba(67, 90, 111, 0.47) 0px 16px 24px -8px;
   z-index: 100;
 }
 
-.Modal :global .modal-header {
+.Modal:global.sui-modal-medium .sui-modal-container { width: 750px; max-height: 80vh; }
+.Modal:global.sui-modal-large .sui-modal-container { width: 900px; max-height: 90vh; }
+.Modal:global.sui-modal-full .sui-modal-container { width: 100vw; max-height: 100vh; }
+
+.Modal :global .sui-modal-header {
   padding: 5px 15px 0px;
 }
 
-.Modal :global .modal-header .header h3 {
+.Modal :global .sui-modal-header .sui-header h3 {
   font-size: 1em;
   font-weight: 500;
 }
 
-.Modal :global .modal-header .close {
+.Modal :global .sui-modal-header .sui-close {
   font-size: 36px;
   line-height: 28px;
   cursor: pointer;
   margin-right: -8px;
 }
 
-.Modal :global .modal-header .close > button {
+.Modal :global .sui-modal-header .sui-close > button {
   padding: 3px 8px;
   margin: 0;
 }
 
-.Modal :global .modal-body {
+.Modal :global .sui-modal-body {
   padding: 5px 15px;
   margin-bottom: 15px;
   overflow-y: auto;
 }
 
+.Modal :global .sui-modal-body > div {
+  width: 100%;
+}
+
 @media (max-width: 568px) {
-  .Modal :global .modal-container {
+  .Modal :global .sui-modal-container {
     width: 100vw;
     height: 100vh;
+    max-height: 100vh;
+    min-height: 100vh;
     box-shadow: none;
     border-radius: 0px;
   }
 
-  .Modal :global .modal-header {
+  .Modal :global .sui-modal-header {
     background: var(--primary);
     padding-bottom: 5px;
   }
   
-  .Modal :global .modal-header .header h3 {
+  .Modal :global .sui-modal-header .sui-header h3 {
     font-size: 1.2em;
     color: #FFFFFF;
   }
 
-  .Modal :global .modal-header .close > button {
+  .Modal :global .sui-modal-header .sui-close > button {
     color: #FFFFFF;
   }
 }
