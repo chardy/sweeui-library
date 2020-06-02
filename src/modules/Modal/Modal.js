@@ -77,9 +77,6 @@ export default function Modal({ children, className, visible, header, type, cont
           </Flex>
         </Flex>
       </div>
-      <style jsx global>{`
-        .sui-modal-open { overflow: hidden; }
-      `}</style>
     </>
   )
 }
