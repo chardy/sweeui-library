@@ -60,6 +60,9 @@ module.exports = {
   sections: [
     {
       name: "Components", components: "src/components/**/*.js", usageMode: "expand"
+    },
+    {
+      name: "Modules", components: "src/modules/**/*.js", usageMode: "expand"
     }
   ],
   webpackConfig,

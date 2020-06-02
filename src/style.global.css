@@ -43,6 +43,8 @@ html {
   --input-border-color: #BBC1E1;
   --placeholder-color: #AAAAAA;
   --placeholder-font-weight: 300;
+  --shade-color: #EBF0FF;
+  --shade-color-active: #C9D7FF;
 }
 
 .full-width { width: 100%; }

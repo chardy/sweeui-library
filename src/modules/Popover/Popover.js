@@ -4,7 +4,7 @@ import ModuleCSS from './Popover.module.css'
 import PropTypes from 'prop-types'
 import { Flex, Button } from 'sweeui'
 
-export default function Popover({ target, children, className, header, display, position, noPadding, onOpen, onClose }) {
+export default function Popover({ target, children, className, mode, header, display, position, noPadding, onOpen, onClose }) {
   const currentRef = useRef(null)
   const [outsideClick, setOutsideClick] = useState(false)
   const [insideClick, setInsideClick] = useState(false)
@@ -76,6 +76,8 @@ export default function Popover({ target, children, className, header, display, 
   }, [target, currentRef, visible])
 
   let classes = {}
+  if (noPadding) { classes["no-padding"] = true }
+  if (mode === "gray") { classes["sui-gray"] = true }
 
   if ([
     "top-left", "top", "top-right",
@@ -97,7 +99,6 @@ export default function Popover({ target, children, className, header, display, 
           ...classNameObject(className),
           ...classes,
           [ModuleCSS["Popover"]]: true,
-          "no-padding": noPadding,
         })}
         style={{
           top: dimension.top,
@@ -134,6 +135,7 @@ Popover.propTypes = {
     "left-bottom", "left", "left-top"
   ]),
   header: PropTypes.string,
+  mode: PropTypes.oneOf(["white", "gray"]),
   noPadding: PropTypes.bool,
   onOpen: PropTypes.func,
   onClose: PropTypes.func,
@@ -142,8 +144,9 @@ Popover.propTypes = {
 Popover.defaultProps = {
   target: null,
   className: "",
-  position: null,
+  position: "right-top",
   header: null,
+  mode: "white",
   noPadding: false,
   onOpen: null,
   onClose: null

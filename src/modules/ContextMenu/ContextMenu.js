@@ -4,7 +4,7 @@ import ModuleCSS from './ContextMenu.module.css'
 import PropTypes from 'prop-types'
 import Popover from '../Popover/Popover'
 
-export default function ContextMenu({ children, trigger, selected, className, position, onClick }) {
+export default function ContextMenu({ children, trigger, selected, className, mode, position, onClick }) {
   const buttonRef = useRef(null)
   const currentRef = useRef(null)
 
@@ -12,6 +12,8 @@ export default function ContextMenu({ children, trigger, selected, className, po
   const [active, setActive] = useState(false)
 
   let classes = {}
+  if (mode === "gray") { classes["sui-gray"] = true }
+
   let styleAttrs = {}
 
   useEffect(() => {
@@ -26,7 +28,7 @@ export default function ContextMenu({ children, trigger, selected, className, po
 
   return (
     <>
-      <div
+      <span
         ref={buttonRef}
         className={classNames({
           ...classNameObject(className),
@@ -37,7 +39,7 @@ export default function ContextMenu({ children, trigger, selected, className, po
         })}
       >
         {trigger}
-      </div>
+      </span>
       <Popover
         className={classNames({
           ...classNameObject(className),
@@ -74,6 +76,7 @@ ContextMenu.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   selected: PropTypes.string,
+  mode: PropTypes.oneOf(["white", "gray"]),
   position: PropTypes.oneOf([
     "top-left", "top", "top-right",
     "right-top", "right", "right-bottom",
@@ -85,5 +88,7 @@ ContextMenu.propTypes = {
 ContextMenu.defaultProps = {
   className: "",
   position: null,
+  mode: "white",
+  position: "right-top",
   selected: null,
 };
