@@ -1,0 +1,29 @@
+.ContextMenu:global.sui-ctx-menu-container {
+  color: #FFFFFF;
+  font-size: 0.8em;
+  padding: 0.3rem 0.5rem;
+  border-radius: 3px;
+}
+
+.ContextMenu:global.sui-ctx-menu-container.sui-ctx-menu-active {
+  background: #FFFFFF33;
+}
+
+.ContextMenu:global.sui-ctx-menu .sui-popover-container {
+  padding: 0.2rem 0;
+}
+
+.ContextMenu:global.sui-ctx-menu .sui-ctx-menu-item {
+  margin: 0 0.2rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 3px;
+}
+
+.ContextMenu:global.sui-ctx-menu .sui-ctx-menu-item:hover {
+  background-color: var(--shade-color-active);
+}
+
+.ContextMenu:global.sui-ctx-menu .sui-ctx-menu-item.active {
+  color: var(--primary-color);
+  background-color: var(--shade-color-active);
+}

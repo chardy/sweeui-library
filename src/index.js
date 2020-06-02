@@ -14,5 +14,10 @@ import FlexGallery from "./layouts/FlexGallery/FlexGallery";
 
 import Modal from "./modules/Modal/Modal";
 import Popover from "./modules/Popover/Popover";
+import ContextMenu from "./modules/ContextMenu/ContextMenu";
 
-export { Text, Image, SplashImage, CategoryListing, ProductListing, ArticleListing, VideoListing, ReviewListing, DetailedInfo, FlexGallery, Modal, Popover };
+export {
+  Text, Image, SplashImage, CategoryListing, ProductListing, ArticleListing, VideoListing, ReviewListing, DetailedInfo,
+  FlexGallery,
+  Modal, Popover, ContextMenu
+}

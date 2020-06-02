@@ -4,7 +4,7 @@ import ModuleCSS from './Popover.module.css'
 import PropTypes from 'prop-types'
 import { Flex, Button } from 'sweeui'
 
-export default function Popover({ target, children, className, header, display, position, noPadding }) {
+export default function Popover({ target, children, className, header, display, position, noPadding, onOpen, onClose }) {
   const currentRef = useRef(null)
   const [outsideClick, setOutsideClick] = useState(false)
   const [insideClick, setInsideClick] = useState(false)
@@ -42,8 +42,14 @@ export default function Popover({ target, children, className, header, display, 
   useEffect(() => {
     if (visible) {
       document.body.classList.add('sui-popover-open')
+      if (typeof onOpen === 'function') {
+        onOpen()
+      }
     } else {
       document.body.classList.remove('sui-popover-open')
+      if (typeof onClose === 'function') {
+        onClose()
+      }
     }
   }, [visible])
   
@@ -129,6 +135,8 @@ Popover.propTypes = {
   ]),
   header: PropTypes.string,
   noPadding: PropTypes.bool,
+  onOpen: PropTypes.func,
+  onClose: PropTypes.func,
 };
 
 Popover.defaultProps = {
@@ -136,5 +144,7 @@ Popover.defaultProps = {
   className: "",
   position: null,
   header: null,
-  noPadding: false
+  noPadding: false,
+  onOpen: null,
+  onClose: null
 };

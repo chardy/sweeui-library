@@ -2,6 +2,7 @@
   position: fixed;
   display: block;
   cursor: pointer;
+  background: transparent;
 }
 
 .Popover :global .sui-popover-container {
