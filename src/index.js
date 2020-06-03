@@ -8,6 +8,7 @@ import ProductListing from "./components/ProductListing/ProductListing";
 import ArticleListing from "./components/ArticleListing/ArticleListing";
 import VideoListing from "./components/VideoListing/VideoListing";
 import ReviewListing from "./components/ReviewListing/ReviewListing";
+import LogoListing from "./components/LogoListing/LogoListing";
 import DetailedInfo from "./components/DetailedInfo/DetailedInfo";
 
 import FlexGallery from "./layouts/FlexGallery/FlexGallery";
@@ -19,7 +20,7 @@ import ConfirmButton from "./modules/ConfirmButton/ConfirmButton";
 import PopoverWrapper from "./modules/PopoverWrapper/PopoverWrapper";
 
 export {
-  Text, Image, SplashImage, CategoryListing, ProductListing, ArticleListing, VideoListing, ReviewListing, DetailedInfo,
+  Text, Image, SplashImage, CategoryListing, ProductListing, ArticleListing, VideoListing, ReviewListing, LogoListing, DetailedInfo,
   FlexGallery,
   Modal, Popover, ContextMenu, ConfirmButton, PopoverWrapper
 }

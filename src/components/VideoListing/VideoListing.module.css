@@ -85,6 +85,11 @@
     line-height: 26px;
   }
 
+  .VideoListing :global .video-container {
+    min-width: 50% !important;
+    width: 50% !important;
+  }
+
   .VideoListing :global .video-container .call-to-action {
     display: none;
   }
@@ -92,5 +97,11 @@
   .VideoListing :global .video-title {
     font-size: 11px;
     line-height: 14px;
+  }
+
+  .VideoListing :global .video-item {
+    width: 100% !important;
+    min-height: 95px !important;
+    max-height: 95px !important;
   }
 }
