@@ -60,18 +60,18 @@ export default function Popover({ target, children, className, mode, header, dis
     if (!!dim && !!currentDim) {
       setDimension(dim)
 
-      if (position === "top-left") { setPositionAttrs ({ top: dim.top - currentDim.height - 2.5, right: 'auto', bottom: 'auto', left: dim.left }) }
-      else if (position === "top") { setPositionAttrs ({ top: dim.top - currentDim.height - 2.5, right: 'auto', bottom: 'auto', left: dim.left + 0.5 * (dim.right - dim.left) - 0.5 * currentDim.width }) }
-      else if (position === "top-right") { setPositionAttrs ({ top: dim.top - currentDim.height - 2.5, right: 'auto', bottom: 'auto', left: dim.right - currentDim.width }) }
-      else if (position === "right-top") { setPositionAttrs ({ top: dim.top, right: 'auto', bottom: 'auto', left: dim.right + 2.5 }) }
-      else if (position === "right") { setPositionAttrs ({ top: dim.top + 0.5 * (dim.bottom - dim.top) - 0.5 * currentDim.height, right: 'auto', bottom: 'auto', left: dim.right + 2.5 }) }
-      else if (position === "right-bottom") { setPositionAttrs ({ top: dim.bottom - currentDim.height, right: 'auto', bottom: 'auto', left: dim.right + 2.5 }) }
-      else if (position === "bottom-right") { setPositionAttrs ({ top: dim.bottom + 2.5, right: 'auto', bottom: 'auto', left: dim.right - currentDim.width }) }
-      else if (position === "bottom") { setPositionAttrs ({ top: dim.bottom + 2.5, right: 'auto', bottom: 'auto', left: dim.left + 0.5 * (dim.right - dim.left) - 0.5 * currentDim.width }) }
-      else if (position === "bottom-left") { setPositionAttrs ({ top: dim.bottom + 2.5, right: 'auto', bottom: 'auto', left: dim.left }) }
-      else if (position === "left-bottom") { setPositionAttrs ({ top: dim.bottom - currentDim.height, right: 'auto', bottom: 'auto', left: dim.left - currentDim.width - 2.5 }) }
-      else if (position === "left") { setPositionAttrs ({ top: dim.top + 0.5 * (dim.bottom - dim.top) - 0.5 * currentDim.height, right: 'auto', bottom: 'auto', left: dim.left - currentDim.width - 2.5 }) }
-      else if (position === "left-top") { setPositionAttrs ({ top: dim.top, right: 'auto', bottom: 'auto', left: dim.left - currentDim.width - 2.5 }) }
+      if (position === "top-left") { setPositionAttrs ({ top: 'auto', right: 'auto', bottom: dim.height + 7.5, left: 0 }) }
+      else if (position === "top") { setPositionAttrs ({ top: 'auto', right: 'auto', bottom: dim.height + 7.5, left: 0.5 * dim.width - 0.5 * currentDim.width }) }
+      else if (position === "top-right") { setPositionAttrs ({ top: 'auto', right: 0, bottom: dim.height + 7.5, left: 'auto' }) }
+      else if (position === "right-top") { setPositionAttrs ({ top: 0, right: 'auto', bottom: 'auto', left: dim.width + 7.5 }) }
+      else if (position === "right") { setPositionAttrs ({ top: 0.5 * dim.height - 0.5 * currentDim.height, right: 'auto', bottom: 'auto', left: dim.width + 7.5 }) }
+      else if (position === "right-bottom") { setPositionAttrs ({ top: 'auto', right: 'auto', bottom: 0, left: dim.width + 7.5 }) }
+      else if (position === "bottom-right") { setPositionAttrs ({ top: dim.height + 7.5, right: 'auto', bottom: 'auto', left: dim.width - currentDim.width }) }
+      else if (position === "bottom") { setPositionAttrs ({ top: dim.height + 7.5, right: 'auto', bottom: 'auto', left: + 0.5 * dim.width - 0.5 * currentDim.width }) }
+      else if (position === "bottom-left") { setPositionAttrs ({ top: dim.height + 7.5, right: 'auto', bottom: 'auto', left: 0 }) }
+      else if (position === "left-bottom") { setPositionAttrs ({ top: 'auto', right: dim.width + 7.5, bottom: 0, left: 'auto' }) }
+      else if (position === "left") { setPositionAttrs ({ top: 0.5 * dim.height - 0.5 * currentDim.height, right: dim.width + 7.5, bottom: 'auto', left: 'auto' }) }
+      else if (position === "left-top") { setPositionAttrs ({ top: 0, right: dim.width + 7.5, bottom: 'auto', left: 'auto' }) }
     }
   }, [target, currentRef, visible])
 
@@ -101,9 +101,9 @@ export default function Popover({ target, children, className, mode, header, dis
           [ModuleCSS["Popover"]]: true,
         })}
         style={{
-          top: dimension.top,
+          top: 0,
           height: dimension.height,
-          left: dimension.left,
+          left: 0,
           width: dimension.width
         }}
         onClick={() => !visible && handleSetInside()}

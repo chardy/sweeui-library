@@ -1,11 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { classNames, classNameObject } from '../../utils/format'
-import ModuleCSS from './ContextMenu.module.css'
+import { Button, Flex } from 'sweeui'
+import ModuleCSS from './ConfirmButton.module.css'
 import PropTypes from 'prop-types'
 import Popover from '../Popover/Popover'
 
-export default function ContextMenu({ children, trigger, selected, className, mode, position, onClick }) {
-  const buttonRef = useRef(null)
+export default function ConfirmButton({ children, trigger, className, mode, position, confirmText, cancelText, onCancel, onConfirm }) {
+  const confirmButtonRef = useRef(null)
   const currentRef = useRef(null)
 
   const [target, setTarget] = useState(null)
@@ -17,25 +18,31 @@ export default function ContextMenu({ children, trigger, selected, className, mo
   let styleAttrs = {}
 
   useEffect(() => {
-    setTarget(buttonRef.current)
+    setTarget(confirmButtonRef.current)
   }, [])
 
-  function handleClick(value) {
-    if (typeof onClick === 'function') {
-      onClick(value)
+  function handleConfirm() {
+    if (typeof onConfirm === 'function') {
+      onConfirm()
+    }
+  }
+
+  function handleCancel() {
+    if (typeof onCancel === 'function') {
+      onCancel()
     }
   }
 
   return (
     <>
       <span
-        ref={buttonRef}
+        ref={confirmButtonRef}
         className={classNames({
           ...classNameObject(className),
           ...classes,
-          [ModuleCSS["ContextMenu"]]: true,
-          "sui-ctx-menu-container": true,
-          "sui-ctx-menu-active": active
+          [ModuleCSS["ConfirmButton"]]: true,
+          "sui-confirm-container": true,
+          "sui-confirm-active": active
         })}
       >
         {trigger}
@@ -43,38 +50,30 @@ export default function ContextMenu({ children, trigger, selected, className, mo
           className={classNames({
             ...classNameObject(className),
             ...classes,
-            "sui-ctx-menu": true
+            "sui-confirm": true
           })}
           target={target}
           position={position}
-          noPadding={true}
           onOpen={() => setActive(true)}
           onClose={() => setActive(false)}
         >
-          {children.map((child, index) => (
-            <div
-              key={index}
-              className={classNames({
-                "sui-ctx-menu-item": true,
-                "active": selected === child.props.value
-              })}
-              onClick={() => handleClick(child.props.value)}
-            >
-              {child.props.children}
-            </div>
-          ))}
+          {children}
+          <Flex className="sui-confirm-btn-group" gutter={[8,0]} justify="end">
+            {!!onCancel && !!cancelText && <Flex><Button onClick={handleCancel}>{cancelText}</Button></Flex>}
+            {!!onConfirm && !!confirmText && <Flex><Button type="primary" onClick={handleConfirm}>{confirmText}</Button></Flex>}
+          </Flex>
         </Popover>
       </span>
     </>
   )
 }
 
-ContextMenu.propTypes = {
-  onClick: PropTypes.func,
+ConfirmButton.propTypes = {
   trigger: PropTypes.node.isRequired,
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
-  selected: PropTypes.string,
+  confirmText: PropTypes.string,
+  cancelText: PropTypes.string,
   mode: PropTypes.oneOf(["white", "gray"]),
   position: PropTypes.oneOf([
     "top-left", "top", "top-right",
@@ -84,9 +83,12 @@ ContextMenu.propTypes = {
   ]),
 };
 
-ContextMenu.defaultProps = {
+ConfirmButton.defaultProps = {
   className: "",
   mode: "white",
   position: "right-top",
-  selected: null,
+  confirmText: 'Yes',
+  cancelText: 'No',
+  onConfirm: null,
+  onCancel: null
 };

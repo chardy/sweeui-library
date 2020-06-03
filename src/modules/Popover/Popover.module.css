@@ -1,12 +1,12 @@
 .Popover {
-  position: fixed;
+  position: absolute;
   display: block;
   cursor: pointer;
   background: transparent;
 }
 
 .Popover :global .sui-popover-container {
-  position: fixed;
+  position: absolute;
   display: block;
   background: #FFFFFF;
   max-width: 300px;
