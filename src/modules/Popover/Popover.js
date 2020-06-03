@@ -102,9 +102,9 @@ export default function Popover({ target, children, className, mode, header, dis
         })}
         style={{
           top: 0,
-          height: dimension.height,
+          bottom: 0,
           left: 0,
-          width: dimension.width
+          right: 0
         }}
         onClick={() => !visible && handleSetInside()}
       >

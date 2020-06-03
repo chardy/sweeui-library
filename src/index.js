@@ -16,9 +16,10 @@ import Modal from "./modules/Modal/Modal";
 import Popover from "./modules/Popover/Popover";
 import ContextMenu from "./modules/ContextMenu/ContextMenu";
 import ConfirmButton from "./modules/ConfirmButton/ConfirmButton";
+import PopoverWrapper from "./modules/PopoverWrapper/PopoverWrapper";
 
 export {
   Text, Image, SplashImage, CategoryListing, ProductListing, ArticleListing, VideoListing, ReviewListing, DetailedInfo,
   FlexGallery,
-  Modal, Popover, ContextMenu, ConfirmButton
+  Modal, Popover, ContextMenu, ConfirmButton, PopoverWrapper
 }

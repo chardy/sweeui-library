@@ -1,0 +1,31 @@
+.PopoverWrapper {
+  position: relative;
+}
+
+.PopoverWrapper:global.sui-popover-wrapper-container {
+  color: #FFFFFF;
+  border-radius: 3px;
+  display: inline-flex;
+}
+
+.PopoverWrapper:global.sui-popover-wrapper-container.sui-popover-wrapper-active {
+  background: #FFFFFF33;
+}
+
+.PopoverWrapper:global.sui-popover-wrapper-container.sui-gray {
+  color: #000000;
+}
+
+.PopoverWrapper:global.sui-popover-wrapper-container.sui-popover-wrapper-active.sui-gray {
+  background: #00000011;
+  color: #555555;
+}
+
+.PopoverWrapper :global .sui-popover-wrapper {
+  color: var(--base);
+}
+
+.PopoverWrapper :global .sui-popover-wrapper .sui-popover-container {
+  min-width: 12rem;
+  padding: 0.8rem 1.2rem;
+}

@@ -37,28 +37,3 @@
 .ConfirmButton :global .sui-confirm .sui-confirm-btn-group button {
   margin: 0;
 }
-
-.ConfirmButton :global .sui-confirm .sui-confirm-item {
-  margin: 0 0.2rem;
-  padding: 0.3rem 0.6rem;
-  border-radius: 3px;
-}
-
-.ConfirmButton :global .sui-confirm .sui-confirm-item:hover {
-  background-color: var(--shade-color-active);
-}
-
-.ConfirmButton :global .sui-confirm .sui-confirm-item.active {
-  color: var(--primary-color);
-  background-color: var(--shade-color-active);
-}
-
-.ConfirmButton :global .sui-confirm.sui-gray .sui-confirm-item:hover {
-  color: #000000;
-  background-color: var(--shade-color);
-}
-
-.ConfirmButton :global .sui-confirm.sui-gray .sui-confirm-item.active {
-  color: var(--primary-color);
-  background-color: var(--shade-color-active);
-}
