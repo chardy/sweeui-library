@@ -7,15 +7,12 @@ import Popover from '../Popover/Popover'
 
 export default function ConfirmButton({ children, trigger, className, mode, position, confirmText, cancelText, onCancel, onConfirm }) {
   const confirmButtonRef = useRef(null)
-  const currentRef = useRef(null)
 
   const [target, setTarget] = useState(null)
   const [active, setActive] = useState(false)
 
   let classes = {}
   if (mode === "gray") { classes["sui-gray"] = true }
-
-  let styleAttrs = {}
 
   useEffect(() => {
     setTarget(confirmButtonRef.current)
@@ -25,12 +22,16 @@ export default function ConfirmButton({ children, trigger, className, mode, posi
     if (typeof onConfirm === 'function') {
       onConfirm()
     }
+
+    setActive(false)
   }
 
   function handleCancel() {
     if (typeof onCancel === 'function') {
       onCancel()
     }
+
+    setActive(false)
   }
 
   return (
