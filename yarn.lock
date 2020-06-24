@@ -8843,6 +8843,10 @@ rollup-plugin-babel@^4.4.0:
     "@babel/helper-module-imports" "^7.0.0"
     rollup-pluginutils "^2.8.1"
 
+rollup-plugin-gzip@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-gzip/-/rollup-plugin-gzip-2.5.0.tgz#786650e7bddf86d7f723c205c3e3018ea727388c"
+
 rollup-plugin-peer-deps-external@^2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/rollup-plugin-peer-deps-external/-/rollup-plugin-peer-deps-external-2.2.2.tgz#506cef67fb68f41cca3ec08ca6ff7936b190f568"
@@ -9728,9 +9732,11 @@ svgo@^1.0.0, svgo@^1.2.2:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
-sweeui@^1.0.8:
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/sweeui/-/sweeui-1.0.9.tgz#eb8121e143ae9fb0003ebabf2898b707da39f3a7"
+sweeui@^1.0.22:
+  version "1.0.22"
+  resolved "https://registry.yarnpkg.com/sweeui/-/sweeui-1.0.22.tgz#39c81e828d327c05dfd3c771eef0d1bf666a2c61"
+  dependencies:
+    rollup-plugin-gzip "^2.5.0"
 
 symbol-tree@^3.2.2:
   version "3.2.4"

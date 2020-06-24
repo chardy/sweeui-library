@@ -170,6 +170,6 @@
     ]
   },
   "dependencies": {
-    "sweeui": "^1.0.8"
+    "sweeui": "^1.0.22"
   }
 }
