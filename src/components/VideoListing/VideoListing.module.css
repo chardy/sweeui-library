@@ -49,8 +49,8 @@
 
 .VideoListing :global .video-container:hover .video-item {
   filter: saturate(1.5);
-  -webkit-box-shadow: 0 4px 12px 0 rgba(14, 14, 14, 0.3);
-  box-shadow: 0 4px 12px 0 rgba(14, 14, 14, 0.3);
+  -webkit-box-shadow: 0 4px 6px 0 rgba(14, 14, 14, 0.3);
+  box-shadow: 0 4px 6px 0 rgba(14, 14, 14, 0.3);
 }
 
 .VideoListing :global .video-container:hover .call-to-action {

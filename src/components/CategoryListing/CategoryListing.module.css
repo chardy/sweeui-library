@@ -40,8 +40,8 @@
 }
 
 .CategoryListing :global .card-item:hover {
-  -webkit-box-shadow: 0 4px 12px 0 rgba(14, 14, 14, 0.5);
-  box-shadow: 0 4px 12px 0 rgba(14, 14, 14, 0.5);
+  -webkit-box-shadow: 0 4px 6px 0 rgba(14, 14, 14, 0.3);
+  box-shadow: 0 4px 6px 0 rgba(14, 14, 14, 0.3);
   filter: saturate(1.1);
 }
 
