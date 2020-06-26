@@ -30,3 +30,7 @@
   font-weight: 500;
   pointer-events: none;
 }
+
+.FlexGallery :global .node-container.image-center > div {
+  background-position: center center;
+}

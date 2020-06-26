@@ -7,7 +7,7 @@ import { Flex } from 'sweeui'
 function groupItems({ width, items, n, limit }) {
   if (n == 1) {
     return [
-      { width: '100%', height: width / 1.6, childHeight: width / 1.6, nodes: [items[0]] }
+      { width: '100%', height: 'auto', childHeight: 'auto', nodes: [items[0]] }
     ]
   }
 
@@ -33,12 +33,12 @@ function FlexGallery({ className, children, width, gutter, focus, limit, rounded
   if (!children) return null
 
   let columns = [], display = limit
-  const total = children.length
-  const items = children.slice(0, limit || children.length)
+  const total = children.length || 1
+  const items = total == 1? [children] : children.slice(0, limit || children.length)
   const length = items.length
 
   if (focus === "none") {
-    columns = groupItems({ width: containerWidth, items, n: 4, limit })
+    columns = groupItems({ width: containerWidth, items, n: Math.min(length, limit || 1), limit })
   } else {
     if (length >= 5 && (containerWidth / 2) > 300) {
       const height = (containerWidth / 2) / 1.6
@@ -65,6 +65,12 @@ function FlexGallery({ className, children, width, gutter, focus, limit, rounded
       if (focus === "right") {
         columns = [columns[1], columns[0]]
       }
+    } else if (length == 2) {
+      const height = (containerWidth / 2) / 1.6
+      columns = [
+        { width: '100%', height: height * 2, childHeight: height, nodes: [items[0], items[1]], center: true }
+      ]
+      display = 2
     } else {
       const height = containerWidth / 1.6
       columns = [
@@ -83,7 +89,7 @@ function FlexGallery({ className, children, width, gutter, focus, limit, rounded
       "rounded": rounded,
       "more": more && display > 1 && (total - display) > 0,
     })}>
-      <Flex width={`${containerWidth + gutter}px`} gutter={[gutter,0]}>
+      <Flex width={`100%`} gutter={[gutter,0]}>
         {
           columns.map((column, index) => (
             <Flex key={index} wrap={1} width={column.width} height={column.height} gutter={[0,gutter]}>
@@ -93,6 +99,7 @@ function FlexGallery({ className, children, width, gutter, focus, limit, rounded
                     <Flex
                       className={classNames({
                         "node-container": true,
+                        "image-center": column.center,
                         "last-node": column.last && nodeIndex == column.nodes.length - 1
                       })}
                       direction="vertical"
