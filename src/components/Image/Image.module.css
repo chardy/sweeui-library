@@ -1,4 +1,5 @@
 .Image {
+  display: block;
   margin: 0px 0px 30px 0px;
 }
 
@@ -36,6 +37,7 @@
 
 .Image :global .image-container img.image-hidden {
   opacity: 0;
+  display: block;
 }
 
 .Image :global .photo-caption {

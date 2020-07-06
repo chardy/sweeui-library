@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import ModuleCSS from './Image.module.css'
 import PropTypes from 'prop-types'
-import { classNames } from '../../utils/format'
+import { classNames, classNameObject } from '../../utils/format'
 import { Flex } from 'sweeui'
 
 function useInterval(callback, delay) {
@@ -34,7 +34,7 @@ function ImageView({ children, LazyLoader }) {
   return children
 }
 
-function Image({ title, description, height, items, collapsible, handleClick, LazyLoader }) {
+function Image({ className, title, description, height, items, collapsible, handleClick, LazyLoader }) {
   const [current, setCurrent] = useState(0)
 
   if (!items || items.length <= 0) return false
@@ -48,6 +48,7 @@ function Image({ title, description, height, items, collapsible, handleClick, La
 
   return (
     <div className={classNames({
+      ...classNameObject(className),
       [ModuleCSS["Image"]]: true,
       "collapsible": collapsible
     })}>
@@ -79,6 +80,7 @@ function Image({ title, description, height, items, collapsible, handleClick, La
 export default Image
 
 Image.propTypes = {
+  className: PropTypes.string,
   title: PropTypes.string,
   description: PropTypes.string,
   height: PropTypes.number,
@@ -96,6 +98,7 @@ Image.propTypes = {
 };
 
 Image.defaultProps = {
+  className: null,
   title: null,
   description: null,
   height: 433,

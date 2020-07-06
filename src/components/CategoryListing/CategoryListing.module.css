@@ -1,5 +1,6 @@
 .CategoryListing {
   margin: 0px 0px 30px;
+  display: block;
 }
 
 .CategoryListing h2 {

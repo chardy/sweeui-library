@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { Flex } from 'sweeui'
+import { classNames, classNameObject } from '../../utils/format'
 import ModuleCSS from './VideoListing.module.css'
 import PropTypes from 'prop-types'
 
-function VideoListing({ title, description, height, width, items, limit, coverflow, handleClick }) {
+function VideoListing({ className, title, description, height, width, items, limit, coverflow, handleClick }) {
   if (!items || items && items.length <= 0) return null
 
   function handleOpenVideo(videoCode) {
@@ -13,7 +14,7 @@ function VideoListing({ title, description, height, width, items, limit, coverfl
   }
 
   return (
-    <div className={ModuleCSS["VideoListing"]}>
+    <div className={classNames({ ...classNameObject(className), [ModuleCSS["VideoListing"]]: true })}>
       <h2>{title}</h2>
       <p>{description}</p>
       <Flex className={`${ModuleCSS["Wrapper"]} ${coverflow? 'coverflow' : 'normal'}`} wrap={1} gutter={[16,0]}>
@@ -50,6 +51,7 @@ function VideoListing({ title, description, height, width, items, limit, coverfl
 export default VideoListing
 
 VideoListing.propTypes = {
+  className: PropTypes.string,
   title: PropTypes.string,
   description: PropTypes.string,
   height: PropTypes.number,
@@ -65,6 +67,7 @@ VideoListing.propTypes = {
 };
 
 VideoListing.defaultProps = {
+  className: null,
   title: null,
   description: null,
   height: 200,

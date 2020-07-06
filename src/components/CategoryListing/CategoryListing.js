@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { Flex, Button } from 'sweeui'
+import { classNames, classNameObject } from '../../utils/format'
 import PropTypes from 'prop-types'
 import LinkItem from '../LinkItem/LinkItem'
 import ModuleCSS from './CategoryListing.module.css'
 
-function CategoryListing({ title, description, more, width, height, items, coverflow, limit, Link }) {
+function CategoryListing({ className, title, description, more, width, height, items, coverflow, limit, Link }) {
   const [current, setCurrent] = useState(limit)
 
   function handleFetchMore() {
@@ -12,7 +13,7 @@ function CategoryListing({ title, description, more, width, height, items, cover
   }
 
   return (
-    <div className={ModuleCSS["CategoryListing"]}>
+    <div className={classNames({ ...classNameObject(className), [ModuleCSS["CategoryListing"]]: true })}>
       {!!title && <h2>{title}</h2>}
       {!!description && <div className="description" dangerouslySetInnerHTML={{ __html: description }} />}
       {
@@ -50,6 +51,7 @@ function CategoryListing({ title, description, more, width, height, items, cover
 export default CategoryListing
 
 CategoryListing.propTypes = {
+  className: PropTypes.string,
   title: PropTypes.string,
   description: PropTypes.string,
   more: PropTypes.string,
@@ -79,6 +81,7 @@ CategoryListing.propTypes = {
 };
 
 CategoryListing.defaultProps = {
+  className: null,
   title: null,
   description: null,
   more: null,

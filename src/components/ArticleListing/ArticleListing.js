@@ -1,10 +1,11 @@
 import React from 'react'
 import { Flex, Button } from 'sweeui'
+import { classNames, classNameObject } from '../../utils/format'
 import ModuleCSS from './ArticleListing.module.css'
 import PropTypes from 'prop-types'
 import LinkItem from '../LinkItem/LinkItem'
 
-export default function ArticleListing({ title, description, height, items, limit, more, handleMore, Link }) {
+export default function ArticleListing({ className, title, description, height, items, limit, more, handleMore, Link }) {
   function handleShowAll() {
     if (typeof handleMore === 'function') {
       handleMore()
@@ -12,7 +13,7 @@ export default function ArticleListing({ title, description, height, items, limi
   }
 
   return (
-    <div className={ModuleCSS["ArticleListing"]}>
+    <div className={classNames({ ...classNameObject(className), [ModuleCSS["ArticleListing"]]: true })}>
       {!!title && <h2>{title}</h2>}
       {!!description && <p className="description">{description}</p>}
       {
@@ -51,6 +52,7 @@ export default function ArticleListing({ title, description, height, items, limi
 }
 
 ArticleListing.propTypes = {
+  className: PropTypes.string,
   title: PropTypes.string,
   description: PropTypes.string,
   more: PropTypes.string,
@@ -79,6 +81,7 @@ ArticleListing.propTypes = {
 };
 
 ArticleListing.defaultProps = {
+  className: null,
   title: null,
   description: null,
   more: null,

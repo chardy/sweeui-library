@@ -1,3 +1,7 @@
+.DetailedInfo {
+  display: block;
+}
+
 .DetailedInfo:global.smaller {
   zoom: 90%;
 }
