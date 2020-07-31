@@ -2,9 +2,8 @@ import React, { useState, useRef, useEffect } from 'react'
 import { classNames, classNameObject } from '../../utils/format'
 import ModuleCSS from './Popover.module.css'
 import PropTypes from 'prop-types'
-import { Flex, Button } from 'sweeui'
 
-export default function Popover({ target, children, className, mode, header, display, position, noPadding, onOpen, onClose }) {
+export default function Popover({ target, children, className, mode, header, isMenuItem, position, noPadding, onOpen, onClose }) {
   const currentRef = useRef(null)
   const [outsideClick, setOutsideClick] = useState(false)
   const [insideClick, setInsideClick] = useState(false)
@@ -13,11 +12,11 @@ export default function Popover({ target, children, className, mode, header, dis
   const [positionAttrs, setPositionAttrs] = useState({})
 
   function handleSetOutside() {
-    setOutsideClick(true)
+    !outsideClick && setOutsideClick(true)
   }
 
   function handleSetInside(ev) {
-    setInsideClick(true)
+    !insideClick && setInsideClick(true)
   }
 
   useEffect(() => {
@@ -29,13 +28,15 @@ export default function Popover({ target, children, className, mode, header, dis
 
   useEffect(() => {
     if (outsideClick && !insideClick) {
-      setVisible(false)
-      setOutsideClick(false)
-      setInsideClick(false)
+      visible && setVisible(false)
+      outsideClick && setOutsideClick(false)
+      insideClick && setInsideClick(false)
     } else if (outsideClick && insideClick) {
-      setVisible(true)
-      setOutsideClick(false)
-      setInsideClick(false)
+      !visible && setVisible(true)
+      outsideClick && setOutsideClick(false)
+      insideClick && setInsideClick(false)
+      
+      visible && !!isMenuItem && setVisible(false)
     }
   }, [outsideClick, insideClick])
 
@@ -137,6 +138,7 @@ Popover.propTypes = {
   header: PropTypes.string,
   mode: PropTypes.oneOf(["white", "gray"]),
   noPadding: PropTypes.bool,
+  isMenuItem: PropTypes.bool,
   onOpen: PropTypes.func,
   onClose: PropTypes.func,
 };

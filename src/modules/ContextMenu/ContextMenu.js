@@ -6,7 +6,6 @@ import Popover from '../Popover/Popover'
 
 export default function ContextMenu({ children, trigger, selected, className, mode, position, onClick }) {
   const buttonRef = useRef(null)
-  const currentRef = useRef(null)
 
   const [target, setTarget] = useState(null)
   const [active, setActive] = useState(false)
@@ -48,6 +47,7 @@ export default function ContextMenu({ children, trigger, selected, className, mo
           target={target}
           position={position}
           noPadding={true}
+          isMenuItem={true}
           onOpen={() => setActive(true)}
           onClose={() => setActive(false)}
         >
