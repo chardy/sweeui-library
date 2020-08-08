@@ -1,6 +1,6 @@
 {
   "name": "sweeui-library",
-  "version": "1.0.13",
+  "version": "1.0.23",
   "description": "Additional UI Set for React",
   "author": "chardy",
   "license": "MIT",
@@ -33,8 +33,8 @@
     "deploy": "gh-pages -d styleguide"
   },
   "peerDependencies": {
-    "classnames": "^2.2.6",
-    "prop-types": "^15.7.2",
+    "classnames": "2.2.6",
+    "prop-types": "15.7.2",
     "react": "16.13.0",
     "react-dom": "16.13.0"
   },
@@ -170,6 +170,6 @@
     ]
   },
   "dependencies": {
-    "sweeui": "^1.0.22"
+    "sweeui": "^1.0.23"
   }
 }
