@@ -10971,9 +10971,9 @@ sshpk@^1.7.0:
     tweetnacl "~0.14.0"
 
 ssri@^6.0.1:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/ssri/-/ssri-6.0.1.tgz#2a3c41b28dd45b62b63676ecb74001265ae9edd8"
-  integrity sha512-3Wge10hNcT1Kur4PDFwEieXSCMCJs/7WvSACcrMYrNp+b8kDL1/0wJch5Ni2WrtwEa2IO8OsVfeKIciKCDx/QA==
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/ssri/-/ssri-6.0.2.tgz#157939134f20464e7301ddba3e90ffa8f7728ac5"
+  integrity sha512-cepbSq/neFK7xB6A50KHN0xHDotYzq58wWCa5LeWqnPrHG8GzfEjO/4O8kpmcGW+oaxkvhEJCWgbgNk4/ZV93Q==
   dependencies:
     figgy-pudding "^3.5.1"
 
@@ -11375,10 +11375,10 @@ svgo@^1.0.0, svgo@^1.2.2:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
-sweeui@^1.0.22:
-  version "1.0.22"
-  resolved "https://registry.yarnpkg.com/sweeui/-/sweeui-1.0.22.tgz#39c81e828d327c05dfd3c771eef0d1bf666a2c61"
-  integrity sha512-jtb2CAa4yAnKn1jcsJ+AtKA1CBfDYdae8avgysPD59wgSx1/qyHcf3DMItpj+VLwvAW0UgEtHVwpnmJCXMwsNA==
+sweeui@^1.0.23:
+  version "1.0.23"
+  resolved "https://registry.yarnpkg.com/sweeui/-/sweeui-1.0.23.tgz#e01da9ecfd11184112cfd075f6188902e8d47973"
+  integrity sha512-rjNEk/SRL3mbinw2nlhjVu4ySrYO9C4fzicDhSgGNC66SRiagnjZIhzlF5vzTLwZ9qgRE9yQGHD18R5lua4bjg==
   dependencies:
     rollup-plugin-gzip "^2.5.0"
 
