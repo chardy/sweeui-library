@@ -5826,9 +5826,9 @@ home-or-tmp@^2.0.0:
     os-tmpdir "^1.0.1"
 
 hosted-git-info@^2.1.4:
-  version "2.8.8"
-  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.8.tgz#7539bd4bc1e0e0a895815a2e0262420b12858488"
-  integrity sha512-f/wzC2QaWBs7t9IYqB4T3sR1xviIViXJRJTWBlx2Gf3g0Xi5vI7Yy4koXQ1c9OYDGHN9sBy1DQ2AB8fqZBWhUg==
+  version "2.8.9"
+  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.9.tgz#dffc0bf9a21c02209090f2aa69429e1414daf3f9"
+  integrity sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==
 
 hpack.js@^2.1.6:
   version "2.1.6"
@@ -11375,10 +11375,10 @@ svgo@^1.0.0, svgo@^1.2.2:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
-sweeui@^1.0.22:
-  version "1.0.22"
-  resolved "https://registry.yarnpkg.com/sweeui/-/sweeui-1.0.22.tgz#39c81e828d327c05dfd3c771eef0d1bf666a2c61"
-  integrity sha512-jtb2CAa4yAnKn1jcsJ+AtKA1CBfDYdae8avgysPD59wgSx1/qyHcf3DMItpj+VLwvAW0UgEtHVwpnmJCXMwsNA==
+sweeui@^1.0.23:
+  version "1.0.23"
+  resolved "https://registry.yarnpkg.com/sweeui/-/sweeui-1.0.23.tgz#e01da9ecfd11184112cfd075f6188902e8d47973"
+  integrity sha512-rjNEk/SRL3mbinw2nlhjVu4ySrYO9C4fzicDhSgGNC66SRiagnjZIhzlF5vzTLwZ9qgRE9yQGHD18R5lua4bjg==
   dependencies:
     rollup-plugin-gzip "^2.5.0"
 
