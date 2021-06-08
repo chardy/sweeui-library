@@ -7883,9 +7883,9 @@ meow@^3.7.0:
     trim-newlines "^1.0.0"
 
 merge-deep@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/merge-deep/-/merge-deep-3.0.2.tgz#f39fa100a4f1bd34ff29f7d2bf4508fbb8d83ad2"
-  integrity sha512-T7qC8kg4Zoti1cFd8Cr0M+qaZfOwjlPDEdZIIPPB2JZctjaPM4fX+i7HOId69tAti2fvO6X5ldfYUONDODsrkA==
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/merge-deep/-/merge-deep-3.0.3.tgz#1a2b2ae926da8b2ae93a0ac15d90cd1922766003"
+  integrity sha512-qtmzAS6t6grwEkNrunqTBdn0qKwFgNWvlxUbAV8es9M7Ot1EbyApytCnvE0jALPa46ZpKDUo527kKiaWplmlFA==
   dependencies:
     arr-union "^3.1.0"
     clone-deep "^0.2.4"
@@ -11375,10 +11375,10 @@ svgo@^1.0.0, svgo@^1.2.2:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
-sweeui@^1.0.22:
-  version "1.0.22"
-  resolved "https://registry.yarnpkg.com/sweeui/-/sweeui-1.0.22.tgz#39c81e828d327c05dfd3c771eef0d1bf666a2c61"
-  integrity sha512-jtb2CAa4yAnKn1jcsJ+AtKA1CBfDYdae8avgysPD59wgSx1/qyHcf3DMItpj+VLwvAW0UgEtHVwpnmJCXMwsNA==
+sweeui@^1.0.23:
+  version "1.0.23"
+  resolved "https://registry.yarnpkg.com/sweeui/-/sweeui-1.0.23.tgz#e01da9ecfd11184112cfd075f6188902e8d47973"
+  integrity sha512-rjNEk/SRL3mbinw2nlhjVu4ySrYO9C4fzicDhSgGNC66SRiagnjZIhzlF5vzTLwZ9qgRE9yQGHD18R5lua4bjg==
   dependencies:
     rollup-plugin-gzip "^2.5.0"
 
