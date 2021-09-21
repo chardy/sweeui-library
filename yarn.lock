@@ -11375,10 +11375,10 @@ svgo@^1.0.0, svgo@^1.2.2:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
-sweeui@^1.0.22:
-  version "1.0.22"
-  resolved "https://registry.yarnpkg.com/sweeui/-/sweeui-1.0.22.tgz#39c81e828d327c05dfd3c771eef0d1bf666a2c61"
-  integrity sha512-jtb2CAa4yAnKn1jcsJ+AtKA1CBfDYdae8avgysPD59wgSx1/qyHcf3DMItpj+VLwvAW0UgEtHVwpnmJCXMwsNA==
+sweeui@^1.0.23:
+  version "1.0.23"
+  resolved "https://registry.yarnpkg.com/sweeui/-/sweeui-1.0.23.tgz#e01da9ecfd11184112cfd075f6188902e8d47973"
+  integrity sha512-rjNEk/SRL3mbinw2nlhjVu4ySrYO9C4fzicDhSgGNC66SRiagnjZIhzlF5vzTLwZ9qgRE9yQGHD18R5lua4bjg==
   dependencies:
     rollup-plugin-gzip "^2.5.0"
 
@@ -11535,9 +11535,9 @@ tmp@^0.0.33:
     os-tmpdir "~1.0.2"
 
 tmpl@1.0.x:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/tmpl/-/tmpl-1.0.4.tgz#23640dd7b42d00433911140820e5cf440e521dd1"
-  integrity sha1-I2QN17QtAEM5ERQIIOXPRA5SHdE=
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/tmpl/-/tmpl-1.0.5.tgz#8683e0b902bb9c20c4f726e3c0b69f36518c07cc"
+  integrity sha512-3f0uOEAQwIqGuWW2MVzYg8fV/QNnc/IpuJNG837rLuczAaLVHslWHZQj4IGiEl5Hs3kkbhwL9Ab7Hrsmuj+Smw==
 
 to-arraybuffer@^1.0.0:
   version "1.0.1"
