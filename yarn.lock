@@ -9576,9 +9576,9 @@ qs@6.7.0:
   integrity sha512-VCdBRNFTX1fyE7Nb6FYoURo/SPe62QCaAyzJvUjwRaIsc+NePBEniHlvxFmmX56+HZphIGtV0XeCirBtpDrTyQ==
 
 qs@~6.5.2:
-  version "6.5.2"
-  resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
-  integrity sha512-N5ZAX4/LxJmF+7wN74pUD6qAh9/wnvdQcjq9TZjevvXzSUo7bfmw91saqMjzGS2xq91/odN2dW/WOl7qQHNDGA==
+  version "6.5.3"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.3.tgz#3aeeffc91967ef6e35c0e488ef46fb296ab76aad"
+  integrity sha512-qxXIEh4pCGfHICj1mAJQ2/2XVZkjCDTcEgfoSQxc/fYivUZxTkk7L3bDBJSoNrEzXI17oUO5Dp07ktqE5KzczA==
 
 qss@^2.0.3:
   version "2.0.3"
@@ -11375,10 +11375,10 @@ svgo@^1.0.0, svgo@^1.2.2:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
-sweeui@^1.0.22:
-  version "1.0.22"
-  resolved "https://registry.yarnpkg.com/sweeui/-/sweeui-1.0.22.tgz#39c81e828d327c05dfd3c771eef0d1bf666a2c61"
-  integrity sha512-jtb2CAa4yAnKn1jcsJ+AtKA1CBfDYdae8avgysPD59wgSx1/qyHcf3DMItpj+VLwvAW0UgEtHVwpnmJCXMwsNA==
+sweeui@^1.0.23:
+  version "1.0.23"
+  resolved "https://registry.yarnpkg.com/sweeui/-/sweeui-1.0.23.tgz#e01da9ecfd11184112cfd075f6188902e8d47973"
+  integrity sha512-rjNEk/SRL3mbinw2nlhjVu4ySrYO9C4fzicDhSgGNC66SRiagnjZIhzlF5vzTLwZ9qgRE9yQGHD18R5lua4bjg==
   dependencies:
     rollup-plugin-gzip "^2.5.0"
 
